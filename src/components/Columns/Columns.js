@@ -1,12 +1,19 @@
 import styles from './Columns.module.scss';
+import Card from '../Card/Card';
+import CardForm from '../CardForm/CardForm';
 
 
-const Columns = props => {
+const Column = props => {
+  console.log('second try', props.id);
     return(
     <article className={styles.column}>
         <h1 className={styles.title}><span className={styles.icon + ' fa fa-' + props.icon}></span>{props.title}</h1>
+        <ul className={styles.cards}>
+          {props.cards.map(card => <Card key={card.id} title={card.title} />)}
+        </ul>
+        <CardForm columnId={props.id} action={props.action} />
     </article>
     );
 };
 
-export default Columns;
+export default Column;
