@@ -1,0 +1,43 @@
+@import '../../styles/settings.scss';
+
+.navBar{
+    background-color: darken($color-dark, 3%);
+
+    .navBarElements{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+
+        .iconSection{
+            display: flex;
+            
+            a{
+                margin: auto 0;
+
+                i{
+                    color: white;
+                    font-size: 24px;
+                }
+            }
+            
+        }
+    
+        .navMenu{
+            ul{
+                list-style-type: none;
+                
+                li{
+                    display: inline-block;
+                    margin-right: 15px;
+                    
+                    a{
+                        color: white;
+                        text-decoration: none;
+                        font-size: 14px
+                    }
+                }
+            }
+        }
+    }
+    
+}
