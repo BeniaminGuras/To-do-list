@@ -5,6 +5,7 @@ import Favorite from './components/Favorite/Favorite';
 import About from './components/About/About';
 import { Routes, Route } from 'react-router-dom';
 import Error from './components/Error/Error';
+import List from './components/List/List';
 
 const App = () => {
   return (
@@ -18,6 +19,7 @@ const App = () => {
             <Route path="/favorite" element={<Favorite />} />
             <Route element={<Error />} />
             <Route path="*" element={<Error />} />
+            <Route path="/list/:listId" element={<List />} />
           </Routes>
         </div>
       </Container>

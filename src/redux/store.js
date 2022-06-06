@@ -9,12 +9,22 @@ export const getFilteredCards = ({ cards, filter }, columnId) => cards
 
 export const getAllColumns = state => state.columns;
 
+export const getListById = ({lists}, listId) => lists.find(list => list.id === listId);
+
+export const getColumnsByList = ({columns}, listId) => columns.filter(column => column.listId === listId);
+
+export const getAllLists = ({lists}) => lists;
+
+export const getFilterValue = ({filter}) => filter;
+
 // action creators
 export const addColumn = payload => ({ type: 'ADD_COLUMN', payload });
 
 export const addCard = payload => ({ type: 'ADD_CARD', payload}); 
 
 export const changeFilter = payload => ({ type: 'CHANGE_FILTER', payload});
+
+export const addList = payload => ({type: 'ADD_LIST', payload});
   
 const reducer = (state, action) => {
     switch (action.type){
@@ -24,6 +34,8 @@ const reducer = (state, action) => {
             return { ...state, cards: [...state.cards, { ...action.payload, id:shortid()}]};
         case 'CHANGE_FILTER':
             return { ...state, filter: action.payload};
+        case 'ADD_LIST':
+            return {...state, lists: [...state.lists, { ...action.payload, id:shortid()}]}
         default:
             return state;
     }
