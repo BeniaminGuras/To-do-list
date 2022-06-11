@@ -1,4 +1,5 @@
 const strContains = (first, second) => {
+    console.log(first, second);
     first = first.toLowerCase();
     second = second.toLowerCase();
 
